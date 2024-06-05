@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "yt-search-crew"
+version = "0.1.0"
+description = ""
+authors = ["hezi"]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.12"
+crewai = {extras = ["tools"],version = "^0.22.4"}
+crewai-tools="^0.0.15"
+unstructured = '==0.10.25'
+pyowm = '3.3.0'
+tools = "^0.1.9"
+load-dotenv = "^0.1.0"
+pydantic = "^2.6.3"
+flask = "^3.0.2"
+flask-cors = "^4.0.0"
+
+[tool.pyright]
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
+useLibraryCodeForTypes = true
+exclude = [".cache"]
+
+[tool.ruff]
+# https://beta.ruff.rs/docs/configuration/
+select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']
+ignore = ['W291', 'W292', 'W293']
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
